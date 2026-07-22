@@ -1,9 +1,13 @@
 name: Cypress e2e Tests
 on: 
-  push: []
+  push:
+    branches:
+      - main
   workflow_dispatch:
     inputs:
       spec:
+        description: "Cypress specs to run"
+        required: false
         default: cypress/e2e/*
 jobs:
   chrome-tests:
